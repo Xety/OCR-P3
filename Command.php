@@ -125,8 +125,11 @@ class Command {
         $contact->setEmail($email);
         $contact->setPhoneNumber($phoneNumber);
 
-        $this->manager->update($contact);
+        if ($this->manager->update($contact)) {
+            echo "Contact avec l'ID $id modifié.\n";
+            return;
+        }
 
-        echo "Contact avec l'ID $id modifié.\n";
+        echo "Échec de la modification du contact avec l'ID $id.\n";
     }
 }

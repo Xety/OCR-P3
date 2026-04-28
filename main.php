@@ -39,7 +39,7 @@ while (true) {
 
     // Commande "delete". Format : "delete {id}"
     if (preg_match("/^delete (\d+)$/", $line, $matches)) {
-        $command->delete($matches[1]);
+        $command->delete((int)$matches[1]);
         continue;
     }
 
@@ -49,7 +49,7 @@ while (true) {
         $name = readline("Entrez le nouveau nom du contact: ");
         $email = readline("Entrez le nouvel email du contact: ");
         $phoneNumber = readline("Entrez le nouveau numéro de téléphone du contact: ");
-        $command->modify($id, $name, $email, $phoneNumber);
+        $command->modify((int)$id, $name, $email, $phoneNumber);
         continue;
     }
 
