@@ -30,8 +30,6 @@ class ContactManager {
             $contacts[] = Contact::fromData($row);
         }
 
-        var_dump($contacts);
-
         return $contacts;
     }
 
